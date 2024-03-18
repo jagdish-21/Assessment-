@@ -1,0 +1,136 @@
+//index.html//
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+    
+  </head>
+  <body>
+    
+    <div class="calculator">
+      <input type="text" placeholder="0" id="inputbox" readonly>
+      <div>
+        <div class="nav">
+       <div class="btn">
+         <button>7</button>
+        <button>8</button>
+        <button>9</button><br>
+      
+      
+          <button>4</button>
+          <button>5</button>
+          <button>6</button><br>
+          
+          <button>1</button>
+          <button>2</button>
+          <button>3</button><br>
+          <button>.</button>
+          <button>0</button>
+         <button class="equlto">=</button>
+        </div>
+  <div class="ope">
+    <button class="operator">DEL</button>
+    <button class="operator">%</button>
+    <button class="operator">*</button>
+    <button class="operator">-</button>
+    <button class="operator">+</button>
+  </div>
+  </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
+
+//style.css//
+
+body{
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+}
+.calculator{
+  padding:0;
+  background-color: blue;
+  
+}
+#inputbox{
+  width: 320Px;
+  height: 120px;
+  padding:10px;
+  margin: 10px;
+  background: white;
+  box-shadow: inset 0px 0px 8px rgba(0, 0, 0, 0.4);
+  font-size: 65px;
+  text-align: right;
+  border: solid 2px rgba(0, 0, 0, 0.4);
+}
+input::placeholder{
+  color:black;
+}
+.nav{
+  display: flex;
+  padding-top: 0;
+
+}
+.btn{
+  height: 300px;
+  width: 80%;
+  margin: 10px;
+  padding-top: 0;
+  background: black;
+}
+button{
+  width: 60px;
+  height: 55px;
+ gap: 5px;
+ margin: 10px;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+
+
+}
+.ope{
+  height: 300px;
+  width: 20%;
+background: rgba(0, 0, 0, 0.6);
+
+}
+.operator{
+  width: 60px;
+  height: 50px;
+  display: flex;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+//script.js//
+let display = document.getElementById("inputbox");
+let buttons = document.querySelectorAll('button');
+
+let buttonArray = Array.from(buttons);
+let string ='';
+
+buttonArray.forEach(btn =>{
+  btn.addEventListener('click',(e) => {
+     if(e.target.innerHTML == 'DEL'){
+      string = string.substring(0,string.length-1);
+      display.value = string;
+     }else if(e.target.innerHTML == '='){
+      string = eval(string);
+      display.value = string;
+     }else{
+      string += e.target.innerHTML;
+      display.value = string;
+    }
+
+
+   });
+
+});

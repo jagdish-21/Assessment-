@@ -1,0 +1,64 @@
+
+body{
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+}
+.calculator{
+  padding:0;
+  background-color: blue;
+  
+}
+#inputbox{
+  width: 320Px;
+  height: 120px;
+  padding:10px;
+  margin: 10px;
+  background: white;
+  box-shadow: inset 0px 0px 8px rgba(0, 0, 0, 0.4);
+  font-size: 65px;
+  text-align: right;
+  border: solid 2px rgba(0, 0, 0, 0.4);
+}
+input::placeholder{
+  color:black;
+}
+.nav{
+  display: flex;
+  padding-top: 0;
+
+}
+.btn{
+  height: 300px;
+  width: 80%;
+  margin: 10px;
+  padding-top: 0;
+  background: black;
+}
+button{
+  width: 60px;
+  height: 55px;
+ gap: 5px;
+ margin: 10px;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+
+
+}
+.ope{
+  height: 300px;
+  width: 20%;
+background: rgba(0, 0, 0, 0.6);
+
+}
+.operator{
+  width: 60px;
+  height: 50px;
+  display: flex;
+  font-size: 24px;
+  cursor: pointer;
+}
